@@ -48,6 +48,64 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+.music-button {
+  position: fixed;
+  z-index: 20;
+  top: 18px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 16px;
+  border: 1px solid rgba(111, 21, 21, 0.15);
+  border-radius: 999px;
+  background: rgba(255, 248, 234, 0.88);
+  color: var(--red-deep);
+  font: 800 0.92rem/1 "Songti SC", "Noto Serif CJK SC", serif;
+  letter-spacing: 0;
+  box-shadow: 0 12px 30px rgba(74, 30, 17, 0.16);
+  backdrop-filter: blur(14px);
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.music-button__icon {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--red);
+  color: #fff8ea;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.music-button[aria-pressed="true"] {
+  background: rgba(181, 31, 26, 0.92);
+  color: #fff8ea;
+}
+
+.music-button[aria-pressed="true"] .music-button__icon {
+  background: #fff8ea;
+  color: var(--red-deep);
+}
+
+.music-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(74, 30, 17, 0.22);
+}
+
+.music-button:focus-visible {
+  outline: 3px solid rgba(36, 109, 90, 0.55);
+  outline-offset: 4px;
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -104,6 +162,11 @@ a {
   line-height: 0.86;
   letter-spacing: 0;
   text-shadow: 0 12px 30px rgba(108, 20, 14, 0.13);
+}
+
+.hero h1 span {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .hero__promise {
@@ -371,12 +434,27 @@ a {
 }
 
 @media (max-width: 760px) {
+  body {
+    padding-bottom: calc(82px + env(safe-area-inset-bottom));
+  }
+
+  .music-button {
+    top: auto;
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    min-height: 54px;
+    padding: 0 18px;
+    font-size: 1rem;
+    box-shadow: 0 16px 40px rgba(74, 30, 17, 0.24);
+  }
+
   .hero {
-    min-height: 82svh;
+    min-height: min(760px, 100svh);
   }
 
   .hero__image {
-    object-position: 58% center;
+    object-position: 64% center;
   }
 
   .hero__veil {
@@ -391,37 +469,104 @@ a {
   }
 
   .hero__content {
-    padding-top: 36px;
-    padding-bottom: 48px;
+    padding-top: calc(28px + env(safe-area-inset-top));
+    padding-bottom: 34px;
     align-self: start;
   }
 
+  .hero__kicker,
+  .section-heading__eyebrow,
+  .blessing-panel__label {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+  }
+
   .hero h1 {
-    max-width: 4em;
-    font-size: clamp(4rem, 23vw, 7rem);
+    max-width: 3.8em;
+    margin-top: 10px;
+    font-size: clamp(3.9rem, 20vw, 5.7rem);
+    line-height: 0.92;
+  }
+
+  .hero h1 span {
+    display: block;
   }
 
   .hero__promise {
-    max-width: 7em;
+    max-width: 8em;
+    margin-top: 14px;
+    font-size: clamp(1.55rem, 7.6vw, 2.15rem);
+    line-height: 1.08;
+  }
+
+  .hero__promise span {
+    display: block;
   }
 
   .hero__copy {
     max-width: 28em;
-    font-size: 1rem;
-    line-height: 1.78;
+    margin-top: 18px;
+    font-size: 0.98rem;
+    line-height: 1.72;
   }
 
   .hero__link,
   .blessing-panel__button {
     width: 100%;
+    min-height: 52px;
+  }
+
+  .hero__link {
+    margin-top: 24px;
+  }
+
+  .cheer {
+    padding: 42px 0 34px;
+  }
+
+  .section-heading {
+    gap: 8px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(2.25rem, 13vw, 3.25rem);
+    line-height: 1.04;
+  }
+
+  .wish-grid {
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .wish-card {
+    padding: 22px;
+  }
+
+  .wish-card__mark {
+    width: 44px;
+    height: 44px;
+  }
+
+  .wish-card h3 {
+    margin-top: 18px;
   }
 
   .blessing-panel {
-    min-height: 250px;
+    min-height: 0;
+    margin-top: 16px;
+    padding: 22px;
+  }
+
+  .blessing-panel__text {
+    min-height: 0;
+    margin: 16px 0 22px;
+    font-size: clamp(1.55rem, 8.6vw, 2.1rem);
+    line-height: 1.18;
   }
 
   .calm-notes p {
     min-height: 0;
+    padding: 18px 18px 16px;
   }
 }
 
