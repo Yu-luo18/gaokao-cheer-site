@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>高考加油 | 金榜题名 未来可期</title>
+    <meta
+      name="description"
+      content="送给所有高考生的一页温暖祝福：高考加油，金榜题名，未来可期。"
+    >
+    <link rel="preload" href="assets/gaokao-hero.png" as="image">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero__image"
+          src="assets/gaokao-hero.png"
+          alt="晨光中的课桌、书本和文具"
+        >
+        <div class="hero__veil" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="hero__kicker">写给每一位全力以赴的少年</p>
+          <h1 id="hero-title">高考加油</h1>
+          <p class="hero__promise"><span>金榜题名，</span><span>未来可期。</span></p>
+          <p class="hero__copy">
+            你走过的每一段清晨和深夜，都在把今天托得更稳。保持呼吸，带着平常心进场，答案会在笔尖慢慢展开。
+          </p>
+          <a class="hero__link" href="#cheer">收下这份祝福</a>
+        </div>
+      </section>
+
+      <section class="cheer" id="cheer" aria-labelledby="cheer-title">
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">把心放稳，把光带上</p>
+            <h2 id="cheer-title">今天只管向前</h2>
+          </div>
+
+          <div class="wish-grid" aria-label="高考祝福">
+            <article class="wish-card">
+              <span class="wish-card__mark">稳</span>
+              <h3>先把节奏握住</h3>
+              <p>看清题目，写好步骤，先拿稳会做的分。你不需要完美，只需要一题一题走下去。</p>
+            </article>
+            <article class="wish-card">
+              <span class="wish-card__mark">勇</span>
+              <h3>相信长期努力</h3>
+              <p>那些反复练过的题、背过的句子、改过的错题，都会在关键时刻替你撑住。</p>
+            </article>
+            <article class="wish-card">
+              <span class="wish-card__mark">光</span>
+              <h3>前路正在展开</h3>
+              <p>这一场考试不是终点，而是你认真奔赴世界的一次出发。愿你落笔生花，抬头见光。</p>
+            </article>
+          </div>
+
+          <div class="blessing-panel" aria-live="polite">
+            <p class="blessing-panel__label">随机收下一句加油</p>
+            <p class="blessing-panel__text" id="blessingText">
+              愿你合上笔盖的那一刻，有战士收刀入鞘的从容。
+            </p>
+            <button class="blessing-panel__button" id="blessingButton" type="button">
+              再来一句
+            </button>
+          </div>
+
+          <div class="calm-notes" aria-label="考前安心短句">
+            <p>证件和文具检查好，早点出门，路上慢一点。</p>
+            <p>遇到难题先跳过，心态稳住，分数就会一分一分回来。</p>
+            <p>今晚好好睡，明天从容写。你已经准备了很久。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
